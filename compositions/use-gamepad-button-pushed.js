@@ -8,11 +8,9 @@ function buttonsPushed (gamepad) {
   }
 
   const buttonsPushed = gamepad.buttons
-    .map((button, index) => ({
-      name: BUTTON_NAMES[index],
-      button
-    }))
-    .filter(({ button }) => (typeof (button) === 'object' && button.pressed) || button === 1.0)
+    .map((button, index) => ({ name: BUTTON_NAMES[index], button }))
+    .filter(({ button }) => (typeof (button) === 'object' && button.pressed) || button === 1)
+
   return {
     index: gamepad.index,
     buttonsPushed
@@ -42,9 +40,13 @@ export function useGamepadButtonPushed () {
       return
     }
 
-    if (!navigator.getGamepads().length) {
-      window.cancelAnimationFrame(start)
+    const areStillGamepadsConnected = Boolean(navigator.getGamepads().length)
+
+    if (areStillGamepadsConnected) {
+      return
     }
+
+    window.cancelAnimationFrame(start)
     start = false
   }
 
@@ -69,7 +71,7 @@ export function useGamepadButtonPushed () {
   })
 
   onUnmounted(() => {
-    window.addEventListener('gamepadconnected', startGameLoop)
+    window.removeEventListener('gamepadconnected', startGameLoop)
     window.removeEventListener('gamepaddisconnected', stopGameLoop)
   })
 

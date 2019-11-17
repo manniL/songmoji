@@ -31,7 +31,7 @@
       </p>
     </div>
     <div v-if="!state.hasStarted" class="mt-8 flex justify-center items-center">
-      <button @click="startQuiz" class="bg-green-700 py-2 px-16 text-white ">
+      <button @click="startQuiz" class="bg-green-700 py-2 px-16 text-white">
         Songmoji starten
       </button>
     </div>
