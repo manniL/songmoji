@@ -11,8 +11,10 @@ const CATEGORIES = {
   RAP: 4
 }
 
-export const categoryNumberToWord = number => Object.entries(CATEGORIES).find(([_, v]) => v === number)[0]
-export const difficultyNumberToWord = number => Object.entries(DIFFICULTIES).find(([_, v]) => v === number)[0]
+const findEntryKeyByValue = object => value => Object.entries(object).find(([_, v]) => v === value)[0]
+
+export const categoryNumberToWord = findEntryKeyByValue(CATEGORIES)
+export const difficultyNumberToWord = findEntryKeyByValue(DIFFICULTIES)
 
 export const songList = [
   {
