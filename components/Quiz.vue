@@ -7,7 +7,12 @@
       Song {{ songCount - songState.shuffledSongList.length }} / {{ songCount }}
     </div>
 
-    <Twemojify v-if="songState.currentSong" :emojis="songState.currentSong.emojis" class="mt-16 h-32 flex justify-center flex-wrap -mx-32" />
+    <Twemojify
+      v-if="songState.currentSong"
+      :emojis="songState.currentSong.emojis"
+      class="mt-16 h-32 flex justify-center flex-wrap -mx-32"
+    />
+
     <template v-if="songState.isSongNameDisplayed">
       <span class="mt-16 text-4xl underline">{{ songState.currentSong.name }}</span>
       <span class="text-2xl mt-4">Schwierigkeit: <span class="italic">{{ difficultyToWord(songState.currentSong.difficulty) }}</span></span>
@@ -37,6 +42,13 @@ import GlobalEvents from 'vue-global-events'
 import { songList, difficultyNumberToWord, categoryNumberToWord } from '~/assets/song-list.js'
 import { useGamepadButtonPushed } from '~/compositions/use-gamepad-button-pushed'
 import Twemojify from '~/components/Twemojify'
+
+import catMeow from '~/assets/audio/cat-meow.mp3'
+import dogBark from '~/assets/audio/dog-bark.mp3'
+import dogToy from '~/assets/audio/dog-toy.mp3'
+import kids from '~/assets/audio/kids.mp3'
+
+const sounds = [catMeow, dogBark, dogToy, kids]
 
 export default createComponent({
   components: {
@@ -90,6 +102,7 @@ export default createComponent({
         const numberFromPushedTeam = gamepad.index + 1
 
         if (teamState.teamsPushed.every(team => team.number !== numberFromPushedTeam)) {
+          new Audio(sounds[gamepad.index]).play()
           teamState.teamsPushed.push({
             number: numberFromPushedTeam,
             date: Number((Date.now() - songState.startTime) / 1000).toFixed(4)
