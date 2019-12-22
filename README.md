@@ -71,3 +71,7 @@ Inspired by [Smiley Cyrus](https://youtu.be/pLbpY6jfH0k?t=378)
 ### Emoji Symbols
 
 Emoji Symbols are loaded via [Twemoji](https://github.com/twitter/twemoji).
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
