@@ -721,5 +721,17 @@ export const songList = [
     emojis: '🥳🏫🔥',
     difficulty: DIFFICULTIES.MEDIUM,
     categories: [CATEGORIES.GERMAN, CATEGORIES.EVERGREEN]
+  },
+  {
+    name: 'Bohemian Rhapsody',
+    emojis: '🇨🇿📜',
+    difficulty: DIFFICULTIES.HARD,
+    categories: [CATEGORIES.ENGLISH, CATEGORIES.EVERGREEN]
+  },
+  {
+    name: 'Stairway to Heaven',
+    emojis: '📶➡️⛅',
+    difficulty: DIFFICULTIES.EASY,
+    categories: [CATEGORIES.ENGLISH, CATEGORIES.EVERGREEN]
   }
 ]
