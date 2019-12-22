@@ -12,7 +12,7 @@ SongMoji is a simple game - You See Emojis on the screen and have to guess which
   Is the answer correct, the team receives points based on the difficulty of the song (Hard=5, Medium=2, Easy=1).
   If the answer is wrong though, the team receives a minus point.
   Only the first answer of the team will be accepted. Just the title of a song is required, not the interpret.
-  There are various difficulties and categories, which are totally random though."
+  There are various difficulties and categories, which are totally random though.
 
 The instructions are also shown when starting the app.
 
