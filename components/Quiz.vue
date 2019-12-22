@@ -29,7 +29,7 @@
         v-if="!songState.isListExhausted"
         class="border bg-blue-800 text-white hover:bg-blue-700 px-3 py-2"
       >
-        Nächster Song
+        Next Song
       </button>
     </div>
   </div>
