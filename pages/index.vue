@@ -4,35 +4,34 @@
       SongMoji
     </h1>
     <h2 v-if="!state.hasStarted" class="text-center text-2xl mt-2">
-      Musik und Hieroglyphen - was für eine Kombination
+      Music and Emojis - what a combination
     </h2>
     <div v-if="!state.hasStarted" class="my-16 text-xl">
       <p>
-        Ihr tretet <strong>in Teams</strong> gegeneinander an. Jedes Team hat genau <strong>einen Controller</strong>, der als Buzzer dient.
+        You compete <strong>in teams</strong> against each other. Every team has exactly <strong>one controller</strong>, which is the team's own "buzzer".
       </p>
       <p>
-        <strong>Ziel des Spiels</strong> ist es, den <strong>Titel</strong> des gesuchten Songs anhand der gezeigten
-        Emojis zu erraten.
-      </p>
-      <br>
-      <p>
-        Das Team, das als erstes den <strong>unteren rechten Knopf (X oder A) drückt</strong>, muss innerhalb von
-        <strong>fünf Sekunden</strong> eine Antwort geben.<br><br>
-        Ist diese Antwort <strong class="bg-green-500">richtig</strong>, gibt es Punkte für das Team abhängig vom Schwierigkeitsgrad (Hard=5, Medium=2, Easy=1).<br>
-        Ist die Antwort <strong class="bg-red-500">falsch</strong>, gibt es einen Minuspunkt und das Team was als nächstes gebuzzert hat, darf eine Antwort gegeben, jedoch ohne Strafe bei falscher Antwort.
+        <strong>The goal of the game</strong> is to guess the <strong>title</strong> of the correct song by interpreting the Emojis shown on the screen.
       </p>
       <br>
       <p>
-        Nur die erste Antwort des Teams wird akzeptiert. Der Titel des Songs reicht als Antwort aus.
+        The team who pushes the <strong>buzzer button (X or A) first</strong>, is allowed to answer the question in the next
+        <strong>five seconds</strong>.<br><br>
+        Is the answer <strong class="bg-green-500">correct</strong>, the team receives points based on the difficulty of the song (Hard=5, Medium=2, Easy=1).<br>
+        If the answer is <strong class="bg-red-500">wrong</strong> though, the team receives a minus point.
       </p>
       <br>
       <p>
-        Natürlich gibt es verschiedene Schwierigkeitsgrade und auch Kategorien bei den Songs. Die Reihenfolge ist jedoch zufällig.
+        Only the first answer of the team will be accepted. Just the title of a song is required, not the interpret.
+      </p>
+      <br>
+      <p>
+        There are various difficulties and categories, which are totally random though.
       </p>
     </div>
     <div v-if="!state.hasStarted" class="mt-8 flex justify-center items-center">
       <button @click="startQuiz" class="bg-green-700 py-2 px-16 text-white">
-        Songmoji starten
+        Start SongMoji
       </button>
     </div>
     <QuizComponent v-if="state.hasStarted" />

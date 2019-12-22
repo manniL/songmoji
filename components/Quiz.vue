@@ -15,8 +15,8 @@
 
     <template v-if="songState.isSongNameDisplayed">
       <span class="mt-16 text-4xl underline">{{ songState.currentSong.name }}</span>
-      <span class="text-2xl mt-4">Schwierigkeit: <span class="italic">{{ difficultyToWord(songState.currentSong.difficulty) }}</span></span>
-      <span class="text-2xl">Kategorien: <span class="italic">{{ songState.currentSong.categories.map(categoryToWord).join(', ') }}</span></span>
+      <span class="text-2xl mt-4">Difficulty: <span class="italic">{{ difficultyToWord(songState.currentSong.difficulty) }}</span></span>
+      <span class="text-2xl">Categories: <span class="italic">{{ songState.currentSong.categories.map(categoryToWord).join(', ') }}</span></span>
     </template>
     <div class="flex flex-col mt-16">
       <span :class="i === 0 ? 'text-green-700' : ''" v-for="(team, i) in teamState.teamsPushed">

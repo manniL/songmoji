@@ -66,7 +66,7 @@ export const songList = [
     categories: [CATEGORIES.ENGLISH]
   },
   {
-    name: 'Whot let the dogs out',
+    name: 'Who let the dogs out',
     emojis: '🏚️➡️🐶🐕️🐩⁉️',
     difficulty: DIFFICULTIES.EASY,
     categories: [CATEGORIES.ENGLISH, CATEGORIES.EVERGREEN]
