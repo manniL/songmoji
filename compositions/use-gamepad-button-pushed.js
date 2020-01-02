@@ -3,7 +3,11 @@ import { onMounted, onUnmounted, reactive, toRefs } from '@vue/composition-api'
 const BUTTON_NAMES = ['A', 'B', 'X', 'Y']
 
 function buttonsPushed (gamepad) {
-  if (!gamepad || !gamepad.buttons) {
+  if (!gamepad) {
+    return null
+  }
+
+  if (!gamepad.buttons) {
     return {}
   }
 
@@ -50,8 +54,27 @@ export function useGamepadButtonPushed () {
     start = false
   }
 
-  function gameLoop () {
+  /**
+   * Retrieves the gamepads of navigator as a regular array, ensuring compatibility
+   * with functional additions like map and filter.
+   */
+  function retrieveGamepads () {
     const gamepads = navigator.getGamepads()
+    if (!gamepads) {
+      return undefined
+    }
+
+    const result = []
+
+    for (const g of gamepads) {
+      result.push(g)
+    }
+
+    return result
+  }
+
+  function gameLoop () {
+    const gamepads = retrieveGamepads()
 
     if (!gamepads) {
       return

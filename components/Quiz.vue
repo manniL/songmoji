@@ -96,7 +96,7 @@ export default createComponent({
 
     watch(gamepadsWithButtons, (newValue) => {
       newValue.forEach((gamepad) => {
-        if (!isButtonAPushed(gamepad)) {
+        if (gamepad == null || !isButtonAPushed(gamepad)) {
           return
         }
         const numberFromPushedTeam = gamepad.index + 1

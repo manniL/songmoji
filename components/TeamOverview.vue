@@ -11,10 +11,13 @@
       @keyup.ö="addPoints(3,-1)"
     />
     <ol v-if="gamepadsWithButtons.length" class="flex justify-around">
-      <li v-for="(gamepad) in gamepadsWithButtons" :class="[teamClass[gamepad.index], isButtonAPushed(gamepad) ? 'bg-green-500' : '' ]">
+      <li v-for="(gamepad) in gamepadsWithButtons" v-if="gamepad != null" :class="[teamClass[gamepad.index], isButtonAPushed(gamepad) ? 'bg-green-500' : '' ]">
         <span>Team {{ gamepad.index + 1 }}</span>
         -
         <span>{{ state.teamPoints[gamepad.index] }} Point{{ state.teamPoints[gamepad.index] === 1 ? '' : 's' }}</span>
+      </li>
+      <li v-else>
+        Disconnected
       </li>
     </ol>
     <div v-else>
