@@ -64,13 +64,7 @@ export function useGamepadButtonPushed () {
       return undefined
     }
 
-    const result = []
-
-    for (const g of gamepads) {
-      result.push(g)
-    }
-
-    return result
+    return Array.from(gamepads)
   }
 
   function gameLoop () {
